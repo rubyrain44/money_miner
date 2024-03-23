@@ -1,7 +1,7 @@
 .mainContent {
     display:flex;
     flex-direction: column;
-    width: 70%;
+    width: 85%;
     margin: 5%;
 }
 
@@ -16,6 +16,14 @@ h1 {
     align-items: center;
 }
 
+button {
+    text-decoration: none;
+    border: 1px solid black;
+    width: 80px;
+    height: 25px;
+    background-color: rgb(245, 229, 156);
+}
+
 .goldTotal {
     border: 1px solid black;
     width: 100px;
@@ -23,9 +31,22 @@ h1 {
     margin-left: 10px;
 }
 
+/* LOCATIONS */
 .locations {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 15px 0px 20px 0px;
+}
+
+.farm, .cave, .house, .casino {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 300px;
+    height: 250px;
+
 }

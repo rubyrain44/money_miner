@@ -24,25 +24,37 @@
             <div class="farm">
                 <h3>Farm</h3>
                 <p>(earns 10-20 golds)</p>
-                <input type="text" name="farm">
+                <form action="/process_money" method="post">
+                    <input type="hidden" value="farm">
+                    <button>Find Gold!</button>
+                </form>
             </div>
 
             <div class="cave">
                 <h3>Cave</h3>
                 <p>(earns 5-10 golds)</p>
-                <input type="text" name="cave">
+                <form action="/process_money" method="post">
+                    <input type="hidden" value="cave">
+                    <button>Find Gold!</button>
+                </form>
             </div>
 
             <div class="house">
                 <h3>House</h3>
                 <p>(earns 2-5 golds)</p>
-                <input type="text" name="house">
+                <form action="/process_money" method="post">
+                    <input type="hidden" value="house">
+                    <button>Find Gold!</button>
+                </form>
             </div>
 
             <div class="casino">
                 <h3>Casino</h3>
                 <p>(earns/takes 0-50 golds)</p>
-                <input type="text" name="casino">
+                <form action="/process_money" method="post">
+                    <input type="hidden" value="casino">
+                    <button>Find Gold!</button>
+                </form>
             </div>
         </div>
 
