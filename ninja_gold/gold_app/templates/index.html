@@ -16,7 +16,7 @@
         <div class="gold">
             <h2>Your Gold: </h2>
             <div class="goldTotal">
-                <p>{{ gold }}</p>
+                <p class="pGold">{{ gold }}</p>
             </div>
         </div>
 
@@ -25,7 +25,8 @@
                 <h3>Farm</h3>
                 <p>(earns 10-20 golds)</p>
                 <form action="/process_money" method="post">
-                    <input type="hidden" value="farm">
+                    {% csrf_token %}
+                    <input type="hidden" name="process_money_form" value="farm">
                     <button>Find Gold!</button>
                 </form>
             </div>
@@ -34,7 +35,8 @@
                 <h3>Cave</h3>
                 <p>(earns 5-10 golds)</p>
                 <form action="/process_money" method="post">
-                    <input type="hidden" value="cave">
+                    {% csrf_token %}
+                    <input type="hidden" name="process_money_form" value="cave">
                     <button>Find Gold!</button>
                 </form>
             </div>
@@ -43,7 +45,8 @@
                 <h3>House</h3>
                 <p>(earns 2-5 golds)</p>
                 <form action="/process_money" method="post">
-                    <input type="hidden" value="house">
+                    {% csrf_token %}
+                    <input type="hidden" name="process_money_form" value="house">
                     <button>Find Gold!</button>
                 </form>
             </div>
@@ -52,7 +55,8 @@
                 <h3>Casino</h3>
                 <p>(earns/takes 0-50 golds)</p>
                 <form action="/process_money" method="post">
-                    <input type="hidden" value="casino">
+                    {% csrf_token %}
+                    <input type="hidden" name="process_money_form" value="casino">
                     <button>Find Gold!</button>
                 </form>
             </div>
