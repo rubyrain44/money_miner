@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+    <title>Money Miner</title>
+</head>
+<body>
+    
+    <div class="mainContent">
+
+        <h1>Money Miner</h1>
+
+        <div class="gold">
+            <h2>Your Gold: </h2>
+            <div class="goldTotal">
+                <p>{{ gold }}</p>
+            </div>
+        </div>
+
+        <div class="locations">
+            <div class="farm">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <input type="text" name="farm">
+            </div>
+
+            <div class="cave">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <input type="text" name="cave">
+            </div>
+
+            <div class="house">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <input type="text" name="house">
+            </div>
+
+            <div class="casino">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <input type="text" name="casino">
+            </div>
+        </div>
+
+        <div class="activities">
+            <h3>Activities: </h3>
+            <div class="history">{{ history }}</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

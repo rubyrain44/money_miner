@@ -1,0 +1,31 @@
+.mainContent {
+    display:flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 5%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* GOLD STYLING */
+.gold {
+    display:flex;
+    align-items: center;
+}
+
+.goldTotal {
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.locations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
