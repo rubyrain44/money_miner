@@ -3,6 +3,11 @@ import random
 
 # Create your views here.
 def index(request):
+    turns = 20
+    print('a')
+    if 'turns' in request.session:
+        turns = request.session['turns']
+        print(turns)
     if 'gold' in request.session:
         gold = request.session['gold']
         context = {
@@ -17,13 +22,15 @@ def index(request):
 
 def process(request):
     gold = request.session['gold']
+    # print(request.session['turns'])
     if request.POST['process_money_form'] == 'farm':
         found_money = random.randint(10, 20)
         gold += found_money
         request.session['gold'] = gold
+        # request.session['turns'] -= 1
         context = {
                 'gold' : gold,
-                'action' : f"You found {found_money} from the farm!"
+                'activity' : f"You found {found_money} gold from the farm!"
             }
         return render(request, "index.html", context)
     elif request.POST['process_money_form'] == 'cave':
@@ -32,7 +39,7 @@ def process(request):
         request.session['gold'] = gold
         context = {
                 'gold' : gold,
-                'action' : f"You found {found_money} from the cave!"
+                'activity' : f"You found {found_money} gold from the cave!"
             }
         return render(request, "index.html", context)
     elif request.POST['process_money_form'] == 'house':
@@ -41,14 +48,21 @@ def process(request):
         request.session['gold'] = gold
         context = {
                 'gold' : gold,
-                'action' : f"You found {found_money} from the house!"
+                'activity' : f"You found {found_money} gold from the house!"
             }
         return render(request, "index.html", context)
     else:
         found_money = random.randint(-50, 50)
         gold += found_money
         request.session['gold'] = gold
-        context = {
-                'gold' : gold
+        if found_money > 0:
+            context = {
+                    'gold' : gold,
+                    'activity' : f"You won {found_money} gold from the casino!"
+                }
+        else:
+            context = {
+                'gold' : gold,
+                'activity' : f"You lost {found_money} gold from the casino. Whomp whomp."
             }
         return render(request, "index.html", context)
