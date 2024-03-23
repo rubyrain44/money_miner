@@ -22,7 +22,8 @@ def process(request):
         gold += found_money
         request.session['gold'] = gold
         context = {
-                'gold' : gold
+                'gold' : gold,
+                'action' : f"You found {found_money} from the farm!"
             }
         return render(request, "index.html", context)
     elif request.POST['process_money_form'] == 'cave':
@@ -30,7 +31,8 @@ def process(request):
         gold += found_money
         request.session['gold'] = gold
         context = {
-                'gold' : gold
+                'gold' : gold,
+                'action' : f"You found {found_money} from the cave!"
             }
         return render(request, "index.html", context)
     elif request.POST['process_money_form'] == 'house':
@@ -38,7 +40,8 @@ def process(request):
         gold += found_money
         request.session['gold'] = gold
         context = {
-                'gold' : gold
+                'gold' : gold,
+                'action' : f"You found {found_money} from the house!"
             }
         return render(request, "index.html", context)
     else:
